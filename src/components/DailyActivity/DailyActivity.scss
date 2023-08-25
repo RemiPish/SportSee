@@ -1,0 +1,47 @@
+@import "../../Styles/style.scss";
+
+.dailyActivity-container {
+    background-color: $gray;
+    margin-bottom: 2em;
+    height: 320px;
+    width: 835px;
+    padding: 2rem;
+}
+
+.daily-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.daily-legend-container {
+    display: flex;
+    color: $text-gray;
+    gap: 3rem;
+
+    .daily-legend-item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            &-black {
+                background-color: $black;
+            }
+
+            &-red {
+                background-color: $red;
+            }
+
+        }
+    }
+}
+
+.daily-chart-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}

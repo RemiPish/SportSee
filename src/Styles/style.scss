@@ -1,0 +1,14 @@
+@import "./variable.scss";
+
+body {
+    margin: 0;
+    font-family: 'Roboto';
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.sideNav-page-container{
+    display: flex;
+}

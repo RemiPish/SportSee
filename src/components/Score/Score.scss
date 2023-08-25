@@ -1,0 +1,65 @@
+@import "../../Styles/style.scss";
+
+.score-container {
+    background-color: $gray;
+    width: 258px;
+    height: 263px;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.daily-title {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.daily-legend-container {
+    display: flex;
+    color: $text-gray;
+    gap: 3rem;
+
+    .daily-legend-item {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+
+            &-black {
+                background-color: $black;
+            }
+
+            &-red {
+                background-color: $red;
+            }
+
+        }
+    }
+}
+
+.daily-chart-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-number {
+    color: #282D30;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+.score-txt {
+    color: #74798C;
+    font-size: 16px;
+}
+
+.score-label{
+    position: relative;
+    top: -53%;
+    left: 35%;
+    text-align: center;
+    width: 80px;
+}

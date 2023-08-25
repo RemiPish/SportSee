@@ -1,0 +1,33 @@
+@import "../../Styles/style.scss";
+
+
+.card {
+    display: flex;
+    padding: 2rem;
+    background-color: $gray;
+    gap: 15px;
+}
+
+.icon {
+    width: 60px;
+}
+
+.numbers {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-self: center;
+}
+
+.infoValue {
+    font-size: 20px;
+    font-weight: 700;
+    color: $text-black;
+}
+
+.infoName {
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-gray
+}

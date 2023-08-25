@@ -1,0 +1,36 @@
+@import "../../../src/Styles/style.scss";
+
+.page {
+    font-family: 'Roboto,sans-serif';
+    margin-left: 20px;
+    width: 100%;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 500;
+
+    .name {
+        color: $primary-color;
+    }
+}
+
+.title-txt {
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.left-side-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-left-content {
+    display: flex;
+    gap:10px;
+}
