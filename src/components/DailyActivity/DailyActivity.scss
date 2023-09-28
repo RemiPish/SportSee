@@ -1,10 +1,13 @@
 @import "../../Styles/style.scss";
 
+.dailyActivity{
+    width: 100%;
+}
+
 .dailyActivity-container {
     background-color: $gray;
     margin-bottom: 2em;
-    height: 320px;
-    width: 835px;
+    height: 250px;
     padding: 2rem;
 }
 
@@ -43,5 +46,4 @@
 .daily-chart-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
 }

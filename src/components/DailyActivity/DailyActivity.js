@@ -39,7 +39,7 @@ export default function DailyActivity({ userId }) {
     }
 
     return (
-        <div >
+        <div className='dailyActivity'>
             {!isLoading ? (
                 <div className='dailyActivity-container'>
                     <div className="daily-chart-header">
@@ -62,7 +62,7 @@ export default function DailyActivity({ userId }) {
                             barCategoryGap="30%"
                         >
                             <CartesianGrid
-                                strokeDasharray="5 5 "
+                                strokeDasharray="5 5"
                                 vertical={false}
                                 stroke="#DEDEDE"
                             />

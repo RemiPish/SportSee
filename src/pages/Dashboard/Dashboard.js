@@ -25,16 +25,16 @@ export default function Dashboard() {
                     <div className="title-txt">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                     <div className="content">
                         <div className="left-side-content">
-                            <div><DailyActivity userId={userId} /></div>
+                            <div className="da-container"><DailyActivity userId={userId} /></div>
 
                             <div className="bottom-left-content">
-                                <div>
+                                <div className="bl-container">
                                     <AverageSessionDuration userId={userId} />
                                 </div>
-                                <div>
+                                <div className="bl-container">
                                     <Performance userId={userId} />
                                 </div>
-                                <div>
+                                <div className="bl-container">
                                     <Score userId={userId} />
                                 </div>
                             </div>

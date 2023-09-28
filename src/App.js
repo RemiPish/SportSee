@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
 import SideNav from './components/SideNav/SideNav';
+import MainPage from './pages/MainPage/MainPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 
 import './App.scss';
@@ -16,6 +17,10 @@ function App() {
 				</div>
 				<div>
 					<Routes>
+					<Route
+							path="/"
+							element={<MainPage/>}
+						/>
 						<Route
 							path="/:userId"
 							element={<Dashboard />}

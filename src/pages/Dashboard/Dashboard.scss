@@ -16,21 +16,34 @@
 }
 
 .title-txt {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
 }
 
 .content {
     display: flex;
     width: 100%;
     align-items: center;
+    gap: 2rem;
 }
 
 .left-side-content {
     display: flex;
+    width:60vw;
     flex-direction: column;
 }
 
 .bottom-left-content {
     display: flex;
+    width: 100%;
     gap:10px;
+}
+
+.da-container{
+    width:100%;
+}
+
+.bl-container{
+    flex: 30%;
+    height: 100px;
+    
 }

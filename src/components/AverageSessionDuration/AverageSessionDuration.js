@@ -37,7 +37,7 @@ export default function UserAverageSessions({ userId }) {
             {!isLoading ? (
                 <div className='averagesession-container'>
                     <div className="daily-chart-header">
-                        <div className="averagesession-title">Durée moyenne des sessions</div>
+                        <div className="averagesession-title">Durée moyenne</div>
                     </div>
                     <ResponsiveContainer width="100%" height="100%">
                         <LineChart
@@ -47,7 +47,6 @@ export default function UserAverageSessions({ userId }) {
                             <XAxis
                                 type="category"
                                 dataKey="day"
-                                tickLine={true}
                                 stroke="red"
                                 padding={{ right: 5, left: 5 }}
                                 tick={{ fontSize: 13, stroke: "white", opacity: 0.8 }}
@@ -64,7 +63,6 @@ export default function UserAverageSessions({ userId }) {
                                 stroke="#D8D8D8"
                                 strokeWidth={2}
                                 dot={false}
-                                activeDot={{ r: 4, strokeWidth: 4, stroke: "white" }}
                             />
                         </LineChart>
                     </ResponsiveContainer>

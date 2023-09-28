@@ -21,15 +21,13 @@ export default function Score({ userId }) {
                         <div className="daily-title">Score</div>
                     </div>
                     <ResponsiveContainer width="100%" height="100%">
-                        <PieChart height={260} width={500}>
+                        <PieChart>
                             <Pie startAngle={180}
                                 endAngle={0}
                                 innerRadius={80}
                                 outerRadius={90}
                                 data={data}
                                 dataKey="value"
-                                labelLine={false}
-                                blendStroke
                                 isAnimationActive={false}
                                 cy={"70%"}>
                                 <Cell fill="#FF0000" />
