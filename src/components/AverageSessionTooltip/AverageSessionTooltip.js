@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 export default function AverageSessionTooltip({ active, payload }) {
+    //gere l'affichage du tooltip avec la valeur de AverageSession lorsque l'utilisateur hover sur le graphe
     if (active) {
         return (
             <div className="a-s-tooltip-container">

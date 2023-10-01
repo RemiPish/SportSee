@@ -6,6 +6,7 @@ import DailyActivityTooltip from '../DailyActivityTooltip/DailyActivityTooltip';
 
 export default function DailyActivity({ userId }) {
 
+    //recupere les infos de l'utilisateur avec FetchData et userId recupéré
     const { data: activityData, loading: isLoading, error: isError } = FetchData('dailyActivity', userId);
     let dailyActivity = [];
     let keyData;
@@ -14,7 +15,7 @@ export default function DailyActivity({ userId }) {
         dailyActivity = getDailyActivityArray(keyData);
     }
 
-
+    //range les données par ordre chronologique pour chaque date de la semaine, reformatage de la date en jour/mois
     function getDailyActivityArray(keyData) {
         let dailyActivityArray = [];
         for (let i = 0; i < keyData.length; i++) {
@@ -58,7 +59,6 @@ export default function DailyActivity({ userId }) {
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart
                             data={dailyActivity}
-                            barGap={8}
                             barCategoryGap="30%"
                         >
                             <CartesianGrid

@@ -5,6 +5,7 @@ import UserInfo from "../UserInfo/UserInfo";
 
 export default function UserInfoContainer({ userId }) {
 
+    //recupere les infos de l'utilisateur avec FetchData et userId recupéré
     const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId);
 
     let keyData;

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 export default function DailyActivityTooltip({ active, payload }) {
+    //gere l'affichage du tooltip avec les valeurs de DailyActivity lorsque l'utilisateur hover sur le graphe
     if (active) {
         return (
             <div className="tooltip-container">

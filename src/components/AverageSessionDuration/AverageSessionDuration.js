@@ -10,7 +10,7 @@ export default function UserAverageSessions({ userId }) {
     const { data: sessionData, loading: isLoading, error: isError } = FetchData('averageSessions', userId);
     if (!isLoading && !isError) {
         sessions = sessionData.sessions.map((data) => {
-
+            //on range les valeurs dans chaque jours pour les afficher dans le graphe
             switch (data.day) {
                 case 1:
                     return { ...data, day: "L" };
@@ -30,6 +30,7 @@ export default function UserAverageSessions({ userId }) {
                     return { ...data };
             }
         });
+        console.log(sessions);
     }
 
     return (

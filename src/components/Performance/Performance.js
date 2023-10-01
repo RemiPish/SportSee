@@ -6,8 +6,10 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 export default function Performance({ userId }) {
 
     let perf = [];
+    //recupere les infos de l'utilisateur avec FetchData et userId recupéré
     const { data: performanceData, loading: isLoading, error: isError } = FetchData('performance', userId);
     if (!isLoading && !isError) {
+        //on range les valeurs dans chaque catégorie pour les afficher dans le graphe
         perf = performanceData.data.map((data) => {
             switch (data.kind) {
                 case 1:
@@ -26,6 +28,7 @@ export default function Performance({ userId }) {
                     return { ...data };
             }
         });
+        console.log(perf);
     }
 
 

@@ -9,12 +9,14 @@ import AverageSessionDuration from '../../components/AverageSessionDuration/Aver
 import Performance from '../../components/Performance/Performance';
 
 export default function Dashboard() {
+    //recupere le userId avec le param de l'url
     let { userId } = useParams();
 
+    //recupere les infos de l'utilisateur avec FetchData et userId recupéré
     const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId);
 
 
-
+    //on affiche les infos de l'utilisateur avec FetchData et userId: les charts avec DailyActivity, les scores avec Score et les infos nutrition avec UserInfoContainer
     return (
         <div >
             {isError ? (

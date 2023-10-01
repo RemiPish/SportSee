@@ -5,10 +5,14 @@ import { Pie, PieChart, ResponsiveContainer, Cell } from 'recharts';
 
 export default function Score({ userId }) {
 
+    //recupere l'info d'utilisateur avec FetchData et userId
     const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId);
     let score, data;
     if (!isLoading && !isError) {
+        //le nom d'argument est different pour les deux utilisateurs: score ou todayScore
         score = userData.todayScore || userData.score || 0;
+
+        //pour afficher la charte de gauge on met deux valeur: le score et la valeur represent tout le reste de la charte 
         data = [{ value: score }, { value: 1 - score }];
     }
 

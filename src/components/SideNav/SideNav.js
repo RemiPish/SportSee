@@ -5,6 +5,7 @@ import dumbell from './../../assets/dumbell.png';
 import meditate from './../../assets/meditate.png';
 import swim from './../../assets/swim.png';
 
+//affichage SideNav, pas de fonctionnalité
 export default function SideNav() {
     return <div className='sideNav'>
         <div className="sidenavDiv">
