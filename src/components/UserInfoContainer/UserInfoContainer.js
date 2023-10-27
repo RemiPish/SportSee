@@ -3,27 +3,22 @@ import './UserInfoContainer.scss';
 import FetchData from "../../services/FetchData";
 import UserInfo from "../UserInfo/UserInfo";
 
-export default function UserInfoContainer({ userId }) {
+export default function UserInfoContainer({ userId, isMock }) {
 
-    //recupere les infos de l'utilisateur avec FetchData et userId recupéré
-    const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId);
+    const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId, isMock);
 
-    let keyData;
-    if (!isLoading && !isError) {
-        keyData = userData.keyData;
-    }
 
     return (
         <div >
-            {!isLoading ? (
+            {(!isLoading || !isError || userData.keyData) ? (
                 <div className='userInfo-container'>
-                    <UserInfo type="calories" value={keyData.calorieCount} />
-                    <UserInfo type="carbs" value={keyData.carbohydrateCount} />
-                    <UserInfo type="fat" value={keyData.lipidCount} />
-                    <UserInfo type="protein" value={keyData.proteinCount} />
+                    <UserInfo type="calories" value={userData.keyData?.calorieCount} />
+                    <UserInfo type="carbs" value={userData.keyData?.carbohydrateCount} />
+                    <UserInfo type="fat" value={userData.keyData?.lipidCount} />
+                    <UserInfo type="protein" value={userData.keyData?.proteinCount} />
                 </div>
 
-            ) : (<div>LOADING!</div>)
+            ) : (!isLoading) ? (<div>LOADING!</div>) : (<div>ERROR!</div>)
             }
         </div>)
 }

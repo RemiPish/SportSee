@@ -7,6 +7,8 @@ export default function MainPage() {
         <div className='links'>
             <a href="/12">Karl Dovineau</a>
             <a href="/18">Cecilia Ratorez</a>
+            <a href="/mock/12">MOCK: Karl Dovineau</a>
+            <a href="/mock/18">MOCK: Cecilia Ratorez</a>
         </div>
     )
 }

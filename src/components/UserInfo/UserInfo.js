@@ -54,7 +54,7 @@ export default function UserInfo({ type, value }) {
             <img className="icon" src={getImage(type)} alt={type} />
         </div>
         <div className="numbers">
-            <div className="infoValue">{value}{getMesurement()}</div>
+            <div className="infoValue">{value} {getMesurement()}</div>
             <div className="infoName">{getName(type)}</div>
         </div>
 

@@ -3,10 +3,10 @@ import './Score.scss';
 import FetchData from "../../services/FetchData";
 import { Pie, PieChart, ResponsiveContainer, Cell } from 'recharts';
 
-export default function Score({ userId }) {
+export default function Score({ userId, isMock }) {
 
     //recupere l'info d'utilisateur avec FetchData et userId
-    const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId);
+    const { data: userData, loading: isLoading, error: isError } = FetchData('infoUser', userId, isMock);
     let score, data;
     if (!isLoading && !isError) {
         //le nom d'argument est different pour les deux utilisateurs: score ou todayScore
@@ -19,7 +19,7 @@ export default function Score({ userId }) {
 
     return (
         <div >
-            {!isLoading ? (
+            {(!isLoading && !isError) ? (
                 <div className='score-container'>
                     <div className="daily-chart-header">
                         <div className="daily-title">Score</div>

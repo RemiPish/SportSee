@@ -3,11 +3,11 @@ import './Performance.scss';
 import FetchData from "../../services/FetchData";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
 
-export default function Performance({ userId }) {
+export default function Performance({ userId, isMock }) {
 
     let perf = [];
     //recupere les infos de l'utilisateur avec FetchData et userId recupéré
-    const { data: performanceData, loading: isLoading, error: isError } = FetchData('performance', userId);
+    const { data: performanceData, loading: isLoading, error: isError } = FetchData('performance', userId, isMock);
     if (!isLoading && !isError) {
         //on range les valeurs dans chaque catégorie pour les afficher dans le graphe
         perf = performanceData.data.map((data) => {
@@ -28,13 +28,12 @@ export default function Performance({ userId }) {
                     return { ...data };
             }
         });
-        console.log(perf);
     }
 
 
     return (
         <div >
-            {!isLoading ? (
+            {(!isLoading && !isError) ? (
                 <div className='performance-container'>
                     <ResponsiveContainer width="100%" height="100%">
                         <RadarChart cx='50%' cy='50%' outerRadius='65%' data={perf}>

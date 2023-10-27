@@ -4,10 +4,10 @@ import FetchData from "../../services/FetchData";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import DailyActivityTooltip from '../DailyActivityTooltip/DailyActivityTooltip';
 
-export default function DailyActivity({ userId }) {
+export default function DailyActivity({ userId, isMock }) {
 
     //recupere les infos de l'utilisateur avec FetchData et userId recupéré
-    const { data: activityData, loading: isLoading, error: isError } = FetchData('dailyActivity', userId);
+    const { data: activityData, loading: isLoading, error: isError } = FetchData('dailyActivity', userId, isMock);
     let dailyActivity = [];
     let keyData;
     if (!isLoading && !isError) {
@@ -41,7 +41,7 @@ export default function DailyActivity({ userId }) {
 
     return (
         <div className='dailyActivity'>
-            {!isLoading ? (
+            {(!isLoading && !isError) ? (
                 <div className='dailyActivity-container'>
                     <div className="daily-chart-header">
                         <div className="daily-title">Activité quotidienne</div>

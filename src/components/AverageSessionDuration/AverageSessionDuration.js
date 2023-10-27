@@ -5,9 +5,9 @@ import FetchData from "../../services/FetchData";
 import AverageSessionTooltip from "../AverageSessionTooltip/AverageSessionTooltip";
 
 
-export default function UserAverageSessions({ userId }) {
+export default function UserAverageSessions({ userId, isMock }) {
     let sessions;
-    const { data: sessionData, loading: isLoading, error: isError } = FetchData('averageSessions', userId);
+    const { data: sessionData, loading: isLoading, error: isError } = FetchData('averageSessions', userId, isMock);
     if (!isLoading && !isError) {
         sessions = sessionData.sessions.map((data) => {
             //on range les valeurs dans chaque jours pour les afficher dans le graphe
@@ -30,12 +30,12 @@ export default function UserAverageSessions({ userId }) {
                     return { ...data };
             }
         });
-        console.log(sessions);
+   
     }
 
     return (
         <div >
-            {!isLoading ? (
+            {(!isLoading && !isError) ? (
                 <div className='averagesession-container'>
                     <div className="daily-chart-header">
                         <div className="averagesession-title">Durée moyenne</div>

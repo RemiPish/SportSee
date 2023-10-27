@@ -17,13 +17,17 @@ function App() {
 				</div>
 				<div>
 					<Routes>
-					<Route
+						<Route
 							path="/"
-							element={<MainPage/>}
+							element={<MainPage />}
 						/>
 						<Route
 							path="/:userId"
-							element={<Dashboard />}
+							element={<Dashboard isMock={false}/>}
+						/>
+						<Route
+							path="/mock/:userId"
+							element={<Dashboard isMock={true} />}
 						/>
 					</Routes>
 				</div>
