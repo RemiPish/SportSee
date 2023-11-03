@@ -10,7 +10,7 @@ export default function Score({ userId, isMock }) {
     let score, data;
     if (!isLoading && !isError) {
         //le nom d'argument est different pour les deux utilisateurs: score ou todayScore
-        score = userData.todayScore || userData.score || 0;
+        score = userData.score;
 
         //pour afficher la charte de gauge on met deux valeur: le score et la valeur represent tout le reste de la charte 
         data = [{ value: score }, { value: 1 - score }];

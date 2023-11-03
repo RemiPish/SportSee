@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import UserInfo from '../Classes/UserInfo';
+import DailyActivity from '../Classes/DailyActivity';
+import AverageSession from '../Classes/AverageSessions';
+import UserPerformance from '../Classes/UserPerformance';
 
 export default function FetchData(service, userID, isMock = false) {
     const [data, setData] = useState({});
@@ -13,9 +17,21 @@ export default function FetchData(service, userID, isMock = false) {
                 try {
                     const url = "http://localhost:3000"
                     const data = await axios.get(url + getEndpoint(service, userID)).then((response) => {
-                        return response.data;
+                        switch (service) {
+                            case 'infoUser':
+                                return new UserInfo(response.data);
+                            case 'dailyActivity':
+                                return new DailyActivity(response.data);
+                            case "averageSessions":
+                                return new AverageSession(response.data);
+                            case 'performance':
+                                return new UserPerformance(response.data);
+
+                            default:
+                                return;
+                        }
                     });
-                    setData(data.data);
+                    setData(data);
                 } catch (error) {
                     console.error(error);
                     setError(true);
@@ -307,12 +323,12 @@ export default function FetchData(service, userID, isMock = false) {
             }
             if (!data)
                 setError(true);
-            else{
+            else {
                 setData(data);
                 setLoading(false);
                 setError(false);
             }
-            
+
         }
 
     }, [service, userID, isMock]);

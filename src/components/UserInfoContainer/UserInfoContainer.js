@@ -12,10 +12,10 @@ export default function UserInfoContainer({ userId, isMock }) {
         <div >
             {(!isLoading || !isError || userData.keyData) ? (
                 <div className='userInfo-container'>
-                    <UserInfo type="calories" value={userData.keyData?.calorieCount} />
-                    <UserInfo type="carbs" value={userData.keyData?.carbohydrateCount} />
-                    <UserInfo type="fat" value={userData.keyData?.lipidCount} />
-                    <UserInfo type="protein" value={userData.keyData?.proteinCount} />
+                    <UserInfo type="calories" value={userData.calorieCount} />
+                    <UserInfo type="carbs" value={userData.carbohydrateCount} />
+                    <UserInfo type="fat" value={userData.lipidCount} />
+                    <UserInfo type="protein" value={userData.proteinCount} />
                 </div>
 
             ) : (!isLoading) ? (<div>LOADING!</div>) : (<div>ERROR!</div>)

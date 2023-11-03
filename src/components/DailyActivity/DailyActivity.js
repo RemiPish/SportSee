@@ -9,10 +9,8 @@ export default function DailyActivity({ userId, isMock }) {
     //recupere les infos de l'utilisateur avec FetchData et userId recupéré
     const { data: activityData, loading: isLoading, error: isError } = FetchData('dailyActivity', userId, isMock);
     let dailyActivity = [];
-    let keyData;
     if (!isLoading && !isError) {
-        keyData = activityData.sessions;
-        dailyActivity = getDailyActivityArray(keyData);
+        dailyActivity = getDailyActivityArray(activityData.sessions);
     }
 
     //range les données par ordre chronologique pour chaque date de la semaine, reformatage de la date en jour/mois

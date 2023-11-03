@@ -25,7 +25,7 @@ export default function Dashboard({isMock}) {
                 </div>
             ) : (!isLoading) ? (
                 <div className="page">
-                    <h1 className="title">Bonjour <span className="name">{!isLoading && userData.userInfos.firstName}</span> !</h1>
+                    <h1 className="title">Bonjour <span className="name">{!isLoading && userData.firstName}</span> !</h1>
                     <div className="title-txt">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                     <div className="content">
                         <div className="left-side-content">
